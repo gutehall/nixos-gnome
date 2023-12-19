@@ -40,6 +40,10 @@ rec {
     rustup
   ];
 
+  home.file = {
+    ".zshrc".source = "./sources/zshrc";
+  };
+  
   programs.zsh.enable = true;
 
   programs.git = {

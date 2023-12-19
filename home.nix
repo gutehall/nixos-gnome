@@ -18,11 +18,6 @@ rec {
     google-chrome
     zsh
     blackbox-terminal
-    wgnord
-    wireguard-tools
-    openresolv
-    gnomeExtensions.gnordvpn-local
-    wireguard-go
     unzip
     wget
     gnupg
@@ -35,6 +30,9 @@ rec {
     kubectl
     minikube
     lazygit
+    todoist
+    spotify
+    teams-for-linux
     cmake
     libgit2
     rustup
@@ -43,7 +41,7 @@ rec {
   home.file = {
     ".zshrc".source = "./sources/zshrc";
   };
-  
+
   programs.zsh.enable = true;
 
   programs.git = {

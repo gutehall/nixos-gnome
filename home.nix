@@ -17,6 +17,7 @@ rec {
     gh
     google-chrome
     zsh
+    blackbox-terminal
     wgnord
     wireguard-tools
     openresolv
@@ -34,6 +35,9 @@ rec {
     kubectl
     minikube
     lazygit
+    cmake
+    libgit2
+    rustup
   ];
 
   programs.zsh.enable = true;

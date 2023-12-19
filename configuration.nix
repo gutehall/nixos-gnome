@@ -42,6 +42,10 @@
   gnome-music
   gnome-terminal
   gnome-console
+  gnome-calendar
+  gnome-help
+  gnome-contacts
+  gnome-weather
   gedit
   epiphany 
   geary 
@@ -51,7 +55,7 @@
   tali 
   iagno 
   hitori 
-  atomix 
+  atomixcontacts
 ]);
 
   # Configure keymap in X11

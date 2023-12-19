@@ -41,6 +41,7 @@
   cheese
   gnome-music
   gnome-terminal
+  gnome-console
   gedit
   epiphany 
   geary 
@@ -75,6 +76,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
 
+  hardware.bluetooth.powerOnBoot = true;
   hardware.bluetooth = {
     enable = true;
     config = {
@@ -88,41 +90,18 @@
 
   services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.mathias = {
-  #   isNormalUser = true;
-  #   description = "mathias";
-  #   extraGroups = [ "networkmanager" "wheel" ];
-  #   packages = with pkgs; [
-  #     firefox
-  #     google-chrome
-  #   #  thunderbird
-  #   ];
-  # };
+   users.users.mathias = {
+     isNormalUser = true;
+     description = "mathias";
+     extraGroups = [ "networkmanager" "wheel" ];
+     packages = with pkgs; [
+     ];
+   };
 
   nixpkgs.config.allowUnfree = true;
 
-  # environment.systemPackages = with pkgs; [
-  #   vim 
-  #   wget
-  #   #pkgs.virtualbox
-  #   pkgs.vagrant
-  #   pkgs.packer
-  #   pkgs.vscode
-  #   pkgs.slack
-  #   pkgs.git
-  #   pkgs.gh
-  #   pkgs.google-chrome
-  #   pkgs.zsh
-  #   pkgs.wgnord
-  #   pkgs.wireguard-tools
-  #   pkgs.openresolv
-  #   pkgs.gnomeExtensions.gnordvpn-local
-  #   pkgs.wireguard-go
-  # ];
-
   system.stateVersion = "23.11";
-  hardware.bluetooth.powerOnBoot = true;
+
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.guest.enable = true;
 

@@ -4,6 +4,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
+      ./home.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -51,7 +52,6 @@
   hitori 
   atomix 
 ]);
-
 
   # Configure keymap in X11
   services.xserver = {

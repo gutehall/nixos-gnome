@@ -15,7 +15,21 @@ sh /home/${USER}/.vim_runtime/install_awesome_vimrc.sh
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
+# vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # zsh plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions /home/${USER}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/${USER}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone https://github.com/MohamedElashri/exa-zsh /home/${USER}/.oh-my-zsh/custom/plugins/exa-zsh
+
+mkdir /home/${USER}/.vim/colors
+
+# copy some files
+cp zshrc /home/${USER}/.zshrc
+#cp my_configs.vimrc /home/${USER}/.vim_runtime/my_configs.vim
+cp bullet-train.zsh-theme /home/${USER}/.oh-my-zsh/themes/bullet-train.zsh-theme
+cp -r vim /home/${USER}/.vim/colors/zenburn.vim
+
+# install vim plugins
+vim +PluginInstall +qall

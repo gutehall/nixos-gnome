@@ -38,9 +38,11 @@ rec {
     rustup
   ];
 
-  home.file = {
-    ".zshrc".source = "./sources/zshrc";
-  };
+  # home.file = {
+  #   ".zshrc".source = "./sources/zshrc";
+  #   ".vimrc".source = "./sources/vimrc";
+  #   ".vim".source   = "./sources/vim";
+  # };
 
   programs.zsh.enable = true;
 

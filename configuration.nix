@@ -109,6 +109,7 @@
     pkgs.zsh-autosuggestions
     pkgs.zsh-syntax-highlighting
     pkgs.vimPlugins.zenburn
+    gnomeExtensions.appindicator
 
       ((vim_configurable.override {  }).customize{
       name = "vim";

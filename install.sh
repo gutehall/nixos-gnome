@@ -27,7 +27,7 @@ mkdir /home/${USER}/.vim/colors
 
 # copy some files
 cp zshrc /home/${USER}/.zshrc
-#cp my_configs.vimrc /home/${USER}/.vim_runtime/my_configs.vim
+cp vimrc /home/${USER}/.vimrc
 cp bullet-train.zsh-theme /home/${USER}/.oh-my-zsh/themes/bullet-train.zsh-theme
 cp -r vim /home/${USER}/.vim/colors/zenburn.vim
 

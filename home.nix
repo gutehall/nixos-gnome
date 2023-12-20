@@ -27,5 +27,6 @@ in
     ./zsh.nix
     ./packages.nix 
     ./config.nix
+    ./xorg.nix
   ];
 }

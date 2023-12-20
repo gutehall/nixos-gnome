@@ -1,7 +1,15 @@
 { config, pkgs, ... }:
 
-rec {
-  programs.home-manager.enable = true;
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
+{
+  imports = [
+    (import "${home-manager}/nixos")
+  ];
+
+# rec {
+ # programs.home-manager.enable = true;
 
   home.username = "mathias";
   home.homeDirectory = "/home/mathias";

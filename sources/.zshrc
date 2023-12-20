@@ -12,7 +12,6 @@ plugins=(
   git
   #exa-zsh
   aws
-  brew
   minikube
   colored-man-pages
   colorize

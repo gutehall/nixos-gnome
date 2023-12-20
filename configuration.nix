@@ -4,8 +4,10 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./home.nix
+      <home-manager/nixos>
     ];
+
+  home-manager.users.mathias.imports = [ ./home.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -58,19 +60,15 @@
   atomixcontacts
 ]);
 
-  # Configure keymap in X11
   services.xserver = {
     layout = "se";
     xkbVariant = "";
   };
 
-  # Configure console keymap
   console.keyMap = "sv-latin1";
 
-  # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -102,7 +100,75 @@
      ];
    };
 
+  programs.zsh.enable = true;
+  users.users.mathias.shell = pkgs.zsh;
+
+  environment.systemPackages = [
+    pkgs.vimPlugins.Vundle-vim
+    pkgs.vimPlugins.vim-localvimrc
+    pkgs.zsh-autosuggestions
+    pkgs.zsh-syntax-highlighting
+    pkgs.vimPlugins.zenburn
+
+      ((vim_configurable.override {  }).customize{
+      name = "vim";
+      vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
+        start = [ vim-nix ];
+        opt = [];
+      };
+      vimrcConfig.customRC = ''
+        set nocompatible
+        filetype off
+
+        set rtp+=~/.vim/bundle/Vundle.vim
+        call vundle#begin()
+
+        Plugin 'VundleVim/Vundle.vim'
+
+        Plugin 'preservim/nerdtree'
+
+        call vundle#end()
+        filetype plugin indent on
+
+        set runtimepath+=~/.vim_runtime
+
+        colors zenburn
+
+        source ~/.vim_runtime/vimrcs/basic.vim
+        source ~/.vim_runtime/vimrcs/filetypes.vim
+        source ~/.vim_runtime/vimrcs/plugins_config.vim
+        source ~/.vim_runtime/vimrcs/extended.vim
+
+        try
+        source ~/.vim_runtime/my_configs.vim
+        catch
+        endtry
+
+        call pathogen#infect()
+        syntax on
+        filetype plugin indent on
+
+        autocmd vimenter * NERDTree
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+        let g:NERDTreeWinPos = "left"
+        map <C-n> :NERDTreeToggle<CR>
+        let NERDTreeShowHidden=1
+
+        nnoremap <C-Left> :tabprevious<CR>
+        nnoremap <C-Right> :tabnext<CR>
+        nnoremap <C-j> :tabprevious<CR>
+        nnoremap <C-k> :tabnext<CR>
+      '';
+    }
+   )
+  ];
+
   nixpkgs.config.allowUnfree = true;
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "Hack" ]; })
+  ];
 
   system.stateVersion = "23.11";
 

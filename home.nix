@@ -10,7 +10,6 @@
   imports = [
       ./zsh.nix 
       ./config.nix
-      ./xorg.nix
       ./vim.nix
   ];
 
@@ -19,6 +18,7 @@
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
+    vim
     virtualbox
     vagrant
     packer

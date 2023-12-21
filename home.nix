@@ -50,6 +50,9 @@
     rustup
     lsd
     bat
+    awscli2
+    eza
+    drive
   ];
 
   home.file = {

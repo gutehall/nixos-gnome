@@ -1,19 +1,18 @@
 { config, pkgs, ... }:
 
-let
-  home-manager = builtins.fetchTarball {
-        url = "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
-        sha256 = "1caggh7q5674b24ghx5p8l4jmd22afwrqqj2flfvlh3n6p94wfyc";
-    };  
-in
+# let
+#   home-manager = builtins.fetchTarball {
+#         url = "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
+#     };  
+# in
 
 {
   imports = [
-    (import "${home-manager}/nixos")
       ./zsh.nix
       ./packages.nix 
       ./config.nix
       ./xorg.nix
+      ./vim.nix
   ];
 
   home.username = "mathias";

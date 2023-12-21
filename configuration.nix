@@ -4,9 +4,10 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./home.nix
-      ./vim.nix
+      <home-manager/nixos>
     ];
+
+  home-manager.users.mathias.imports = [ ./home.nix ]; 
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -67,7 +68,7 @@
   programs.zsh.enable = true;
   users.users.mathias.shell = pkgs.zsh;
 
-  environment.systemPackages = [ vim ];
+  #environment.systemPackages = [ vim ];
 
   nixpkgs.config.allowUnfree = true;
 

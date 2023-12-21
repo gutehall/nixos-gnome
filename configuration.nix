@@ -4,10 +4,8 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      <home-manager/nixos>
+      ./home.nix
     ];
-
-  home-manager.users.mathias.imports = [ ./home.nix ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -69,12 +67,12 @@
   users.users.mathias.shell = pkgs.zsh;
 
   environment.systemPackages = [
+    vim
     pkgs.vimPlugins.Vundle-vim
     pkgs.vimPlugins.vim-localvimrc
     pkgs.zsh-autosuggestions
     pkgs.zsh-syntax-highlighting
     pkgs.vimPlugins.zenburn
-    gnomeExtensions.appindicator
 
       ((vim_configurable.override {  }).customize{
       name = "vim";

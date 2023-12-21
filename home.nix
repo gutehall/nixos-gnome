@@ -1,28 +1,28 @@
 { config, pkgs, ... }:
 
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  home-manager = builtins.fetchTarball {
+        url = "https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz";
+        sha256 = "1caggh7q5674b24ghx5p8l4jmd22afwrqqj2flfvlh3n6p94wfyc";
+    };  
 in
 
 {
   imports = [
     (import "${home-manager}/nixos")
+      ./zsh.nix
+      ./packages.nix 
+      ./config.nix
+      ./xorg.nix
   ];
 
   home.username = "mathias";
   home.homeDirectory = "/home/mathias";
   home.stateVersion = "23.11";
 
-  nixpkgs.config.allowUnfree = true;
-
   home.file = {
     "./oh-my-zsh/themes/bullet-train.zsh-theme".source = ./sources/bullet-train.zsh-theme;
   };
 
-  imports = [
-    ./zsh.nix
-    ./packages.nix 
-    ./config.nix
-    ./xorg.nix
-  ];
+  programs.home-manager.enable = true;
 }

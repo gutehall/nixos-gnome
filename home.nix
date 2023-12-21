@@ -31,8 +31,15 @@
     gh
     google-chrome
     zsh
+    zsh-powerlevel10k
+    zsh-history-substring-search
+    zsh-fzf-tab
+    zsh-syntax-highlighting
+    zsh-autosuggestions
     blackbox-terminal
+    unrar
     unzip
+    curl
     wget
     gnupg
     htop
@@ -55,6 +62,8 @@
     awscli2
     eza
     drive
+    oh-my-zsh
+    tmux
   ];
 
   home.file = {

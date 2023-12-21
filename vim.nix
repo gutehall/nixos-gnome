@@ -1,4 +1,5 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+
 {
   environment.variables = { EDITOR = "vim"; };
 
@@ -8,18 +9,17 @@
 
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
         start = [ 
-            plugins = with pkgs.vimPlugins; [ 
             Vundle-vim
             vim-localvimrc
             zsh-autosuggestions
             zsh-syntax-highlighting
             vimPlugins.zenburn
-      ];
         ];
+      ];
         opt = [];
       };
       vimrcConfig.customRC = ''
-        set nocompatible
+          set nocompatible
           filetype off
 
           set rtp+=~/.vim/bundle/Vundle.vim

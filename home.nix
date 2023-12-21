@@ -17,6 +17,8 @@
   home.homeDirectory = "/home/mathias";
   home.stateVersion = "23.11";
 
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
     vim
     virtualbox

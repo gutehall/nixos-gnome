@@ -46,10 +46,7 @@
   cheese
   gnome-music
   gnome-terminal
-  gnome-console
   gnome-calendar
-  gnome-help
-  gnome-contacts
   gnome-weather
   gedit
   epiphany 
@@ -60,7 +57,7 @@
   tali 
   iagno 
   hitori 
-  atomixcontacts
+  atomix
 ]);
 
   services.xserver = {
@@ -78,6 +75,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
 
   hardware.bluetooth.powerOnBoot = true;
   hardware.bluetooth = {
@@ -89,7 +87,6 @@
     };
   };
   services.blueman.enable = true;
-  };
 
    users.users.mathias = {
      isNormalUser = true;

@@ -11,6 +11,7 @@
       ./zsh.nix 
       ./config.nix
       ./vim.nix
+      ./dconf.nix
   ];
 
   home.username = "mathias";

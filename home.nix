@@ -8,7 +8,7 @@
 
 {
   imports = [
-      ./zsh.nix 
+      #./zsh.nix 
       ./config.nix
       ./vim.nix
       ./dconf.nix

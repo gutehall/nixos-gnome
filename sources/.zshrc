@@ -27,7 +27,6 @@ if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nano'
 fi
 
-alias docker="podman"
 alias ls="exa -lh --color=auto --no-icons"
 
 # Terraform

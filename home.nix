@@ -32,11 +32,11 @@
     gh
     google-chrome
     zsh
-    zsh-powerlevel10k
-    zsh-history-substring-search
-    zsh-fzf-tab
-    zsh-syntax-highlighting
-    zsh-autosuggestions
+    #zsh-powerlevel10k
+    #zsh-history-substring-search
+    #zsh-fzf-tab
+    #zsh-syntax-highlighting
+    #zsh-autosuggestions
     blackbox-terminal
     unrar
     unzip
@@ -63,12 +63,14 @@
     awscli2
     eza
     drive
-    oh-my-zsh
+    #oh-my-zsh
     tmux
   ];
 
   home.file = {
     "./oh-my-zsh/themes/bullet-train.zsh-theme".source = ./sources/bullet-train.zsh-theme;
+    "ohmyzsh.sh".source = ./sources/ohmyzsh.sh;
+    ".zshrc".source = ./sources/.zshrc;
   };
 
   programs.home-manager.enable = true;

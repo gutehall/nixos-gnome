@@ -99,11 +99,6 @@
   programs.zsh.enable = true;
   users.users.mathias.shell = pkgs.zsh;
 
-  #environment.systemPackages = [ vim ];
-
-  #environment.shells = with pkgs; [ zsh ];
-  #users.defaultUserShell = pkgs.zsh;
-
   nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [

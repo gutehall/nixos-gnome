@@ -58,7 +58,7 @@
     atomix
 
     gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-contacts
-    gnome-font-viewer gnome-logs gnome-maps gnome-music gnome-photos gnome-screenshot
+    gnome-font-viewer gnome-logs gnome-maps gnome-music pkgs.gnome-photos gnome-screenshot
     gnome-system-monitor gnome-weather gnome-disk-utility pkgs.gnome-connections 
     pkgs.gnome-tour gnome-terminal
   ];

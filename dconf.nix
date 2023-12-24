@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  # Use `dconf watch /` to track stateful changes you are doing, then set them here.
+  # Use https://github.com/gvolpe/dconf2nix and run dconf dump / | dconf2nix > dconf.nix
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";

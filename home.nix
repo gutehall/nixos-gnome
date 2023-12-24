@@ -32,12 +32,12 @@
     gh
     google-chrome
     zsh
-    #zsh-powerlevel10k
+    #oh-my-zsh
     #zsh-history-substring-search
     #zsh-fzf-tab
     #zsh-syntax-highlighting
     #zsh-autosuggestions
-    blackbox-terminal
+    tilix
     unrar
     unzip
     curl
@@ -63,7 +63,6 @@
     awscli2
     eza
     drive
-    #oh-my-zsh
     tmux
   ];
 

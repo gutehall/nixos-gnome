@@ -54,10 +54,7 @@
     lazygit
     todoist
     spotify
-    teams-for-linux
-    cmake
-    libgit2
-    rustup
+    #teams-for-linux
     lsd
     bat
     awscli2

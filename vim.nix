@@ -15,7 +15,6 @@
             zsh-syntax-highlighting
             vimPlugins.zenburn
         ];
-      ];
         opt = [];
       };
       vimrcConfig.customRC = ''

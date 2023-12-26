@@ -38,30 +38,32 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.libinput.enable = true;
-  
-  environment.gnome.excludePackages = with pkgs.gnome; [
-    baobab
-    cheese
-    eog
-    epiphany
-    gedit
-    simple-scan
-    totem
-    yelp
-    evince
-    file-roller
-    geary
-    seahorse
-    tali
-    iagno 
-    hitori 
-    atomix
 
-    gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-contacts
-    gnome-font-viewer gnome-logs gnome-maps gnome-music pkgs.gnome-photos gnome-screenshot
-    gnome-system-monitor gnome-weather gnome-disk-utility pkgs.gnome-connections 
-    pkgs.gnome-tour gnome-terminal
-  ];
+  services.gnome.core-utilities.enable = false;
+  
+  # environment.gnome.excludePackages = with pkgs.gnome; [
+  #   baobab
+  #   cheese
+  #   eog
+  #   epiphany
+  #   gedit
+  #   simple-scan
+  #   totem
+  #   yelp
+  #   evince
+  #   file-roller
+  #   geary
+  #   seahorse
+  #   tali
+  #   iagno 
+  #   hitori 
+  #   atomix
+
+  #   gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-contacts
+  #   gnome-font-viewer gnome-logs gnome-maps gnome-music pkgs.gnome-photos gnome-screenshot
+  #   gnome-system-monitor gnome-weather gnome-disk-utility pkgs.gnome-connections 
+  #   pkgs.gnome-tour gnome-terminal
+  # ];
 
   services.xserver = {
     layout = "se";

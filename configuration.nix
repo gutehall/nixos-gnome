@@ -7,6 +7,8 @@
       <home-manager/nixos>
     ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];   
+
   home-manager.users.mathias.imports = [ ./home.nix ]; 
 
   boot.loader.systemd-boot.enable = true;

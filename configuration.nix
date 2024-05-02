@@ -72,6 +72,24 @@
     xkbVariant = "";
   };  
 
+  #   services.xserver = {
+  #   enable              = true;
+  #   layout              = "us,ru(winkeys)";
+  #   xkbOptions          = "grp:caps_toggle";
+  #   xkbVariant          = "winkeys";
+  #   desktopManager.default = "none";
+  #   windowManager.openbox.enable = true;
+  #   displayManager.slim = {
+  #     autoLogin = false;
+  #     defaultUser = "lcd";
+  #     enable = true;
+  #   };
+  #   displayManager.sessionCommands = ''
+  #     xset s off &
+  #     ${pkgs.vlc}/bin/vlc /home/lcd/schetki -L --fullscreen &
+  #   '';
+  # };
+
   services.printing.enable = true;
 
   sound.enable = true;
@@ -94,6 +112,7 @@
     };
   };
   services.blueman.enable = true;
+  dbus.enable = true;
 
    users.users.mathias = {
      isNormalUser = true;

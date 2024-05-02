@@ -26,11 +26,6 @@
     gh
     google-chrome
     zsh
-    #oh-my-zsh
-    #zsh-history-substring-search
-    #zsh-fzf-tab
-    #zsh-syntax-highlighting
-    #zsh-autosuggestions
     tilix
     unrar
     unzip

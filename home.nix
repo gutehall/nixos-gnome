@@ -2,8 +2,7 @@
 
 {
   imports = [
-      #./zsh.nix 
-      ./config.nix
+      ./zsh.nix 
       ./vim.nix
       ./dconf.nix
   ];
@@ -52,11 +51,11 @@
     tmux
   ];
 
-  home.file = {
-    "./oh-my-zsh/themes/bullet-train.zsh-theme".source = ./sources/bullet-train.zsh-theme;
-    "ohmyzsh.sh".source = ./sources/ohmyzsh.sh;
-    ".zshrc".source = ./sources/.zshrc;
-  };
+  # home.file = {
+  #   "./oh-my-zsh/themes/bullet-train.zsh-theme".source = ./sources/bullet-train.zsh-theme;
+  #   "ohmyzsh.sh".source = ./sources/ohmyzsh.sh;
+  #   ".zshrc".source = ./sources/.zshrc;
+  # };
 
   programs.home-manager.enable = true;
 }

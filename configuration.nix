@@ -7,7 +7,8 @@
       <home-manager/nixos>
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];   
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.auto-optimise-store = true;
 
   home-manager.users.mathias.imports = [ ./home.nix ]; 
 
@@ -40,9 +41,15 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.libinput.enable = true;
+  services.xserver = {
+    layout = "se";
+    xkbVariant = "";
+  };  
 
   services.gnome.core-utilities.enable = false;
   
+  environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator ];
+
   environment.gnome.excludePackages = with pkgs.gnome; [
     baobab
     cheese
@@ -67,29 +74,6 @@
     pkgs.gnome-tour gnome-terminal
   ];
 
-  services.xserver = {
-    layout = "se";
-    xkbVariant = "";
-  };  
-
-  #   services.xserver = {
-  #   enable              = true;
-  #   layout              = "us,ru(winkeys)";
-  #   xkbOptions          = "grp:caps_toggle";
-  #   xkbVariant          = "winkeys";
-  #   desktopManager.default = "none";
-  #   windowManager.openbox.enable = true;
-  #   displayManager.slim = {
-  #     autoLogin = false;
-  #     defaultUser = "lcd";
-  #     enable = true;
-  #   };
-  #   displayManager.sessionCommands = ''
-  #     xset s off &
-  #     ${pkgs.vlc}/bin/vlc /home/lcd/schetki -L --fullscreen &
-  #   '';
-  # };
-
   services.printing.enable = true;
 
   sound.enable = true;
@@ -111,6 +95,7 @@
       };
     };
   };
+
   services.blueman.enable = true;
   dbus.enable = true;
 
@@ -123,6 +108,7 @@
    };
 
   programs.zsh.enable = true;
+  
   users.users.mathias.shell = pkgs.zsh;
 
   nixpkgs.config.allowUnfree = true;
@@ -138,5 +124,9 @@
 
   powerManagement.enable = true; 
 
-  nix.gc.automatic = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
 }

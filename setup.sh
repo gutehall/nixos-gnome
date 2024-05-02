@@ -7,7 +7,6 @@ SOURCES_PATH=./sources
 NIXOS_CONFIG_PATH=~/nixos
 BACKUP_PATH=/etc/nixos.bak
 
-
 # Remove .oh-my-zsh if it exists
 if [ -d "$HOME/.oh-my-zsh" ]; then
     rm -rf "$HOME/.oh-my-zsh"
@@ -40,7 +39,7 @@ fi
 if ! command -v home-manager &> /dev/null; then
     nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
     nix-channel --update
-    export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+    # export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
     nix-shell '<home-manager>' -A install
 fi
 

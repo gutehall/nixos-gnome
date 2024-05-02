@@ -10,8 +10,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.auto-optimise-store = true;
 
-  home-manager.users.mathias.imports = [ ./home.nix ]; 
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -103,13 +101,14 @@
      isNormalUser = true;
      description = "mathias";
      extraGroups = [ "networkmanager" "wheel" ];
+     shell = pkgs.zsh;
      packages = with pkgs; [
      ];
    };
 
+  home-manager.users.mathias.imports = [ ./home.nix ]; 
+
   programs.zsh.enable = true;
-  
-  users.users.mathias.shell = pkgs.zsh;
 
   nixpkgs.config.allowUnfree = true;
 

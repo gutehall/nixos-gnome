@@ -37,8 +37,8 @@ fi
 
 # Install Home Manager if not already installed
 if ! command -v home-manager &> /dev/null; then
-    nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
-    nix-channel --update
+    sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
+    sudo nix-channel --update
     # export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
     nix-shell '<home-manager>' -A install
 fi

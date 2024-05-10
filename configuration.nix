@@ -109,6 +109,7 @@
   home-manager.users.mathias.imports = [ ./home.nix ]; 
 
   programs.zsh.enable = true;
+  programs.git.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 

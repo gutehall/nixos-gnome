@@ -4,7 +4,6 @@
   imports = [
       ./zsh.nix 
       ./vim.nix
-      ./dconf.nix
   ];
 
   home.username = "mathias";
@@ -17,6 +16,7 @@
     vim
     virtualbox
     vagrant
+    terraform
     packer
     ansible
     vscode
@@ -40,22 +40,20 @@
     kubectl
     minikube
     lazygit
-    todoist
     spotify
-    teams-for-linux
+    whatsapp-for-linux
     lsd
     bat
     awscli2
     eza
     drive
     tmux
+    warp-terminal
   ];
 
-  # home.file = {
-  #   "./oh-my-zsh/themes/bullet-train.zsh-theme".source = ./sources/bullet-train.zsh-theme;
-  #   "ohmyzsh.sh".source = ./sources/ohmyzsh.sh;
-  #   ".zshrc".source = ./sources/.zshrc;
-  # };
+  home.sessionVariables = {
+    EDITOR = "vim";
+  };
 
   programs.home-manager.enable = true;
 }

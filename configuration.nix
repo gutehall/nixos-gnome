@@ -117,7 +117,7 @@
     (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.guest.enable = true;

@@ -26,7 +26,12 @@ if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nano'
 fi
 
-alias ls="exa -lh --color=auto --no-icons"
+alias ld="eza -lD"
+alias lf="eza -lF --color=always | grep -v /"
+alias lh="eza -dl .* --group-directories-first"
+alias ll="eza -al --group-directories-first"
+alias ls="eza -alF --color=always --sort=size | grep -v /"
+alias lt="eza -al --sort=modified"
 
 # Terraform
 alias tfi="terraform init"
@@ -66,23 +71,4 @@ BULLETTRAIN_PROMPT_ORDER=(
 
 precmd() {
   echo -ne "\e]1;${PWD##*/}\a"
-}
-
-# Create new Terraform
-tf-new() {
-    mkdir modules
-    touch main.tf
-    touch variables.tf
-    touch output.tf
-    touch README.md
-    touch .gitignore
-    echo -e "*.tfstate\n*.tfstate.backup\n.terraform.tfstate.*\ntfplan\n.DS_Store\n*.hcl\n.terraform/" > .gitignore
-}
-
-tf-files() {
-    touch main.tf
-    touch variables.tf
-    touch output.tf
-    touch version.tf
-    echo -e "terraform {\nrequired_version = \">= 0.12\"\n}" > version.tf
 }

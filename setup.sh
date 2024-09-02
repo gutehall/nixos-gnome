@@ -2,7 +2,8 @@
 
 # Paths
 VIMRC_PATH=~/.vim_runtime
-ZSH_CUSTOM_PLUGINS=~/.oh-my-zsh/custom/plugins
+ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+ZSH_CUSTOM_PLUGINS="$ZSH_CUSTOM/plugins"
 SOURCES_PATH=./sources
 NIXOS_CONFIG_PATH=~/nixos
 BACKUP_PATH=/etc/nixos.bak
@@ -23,12 +24,14 @@ clone_repositories() {
 
     for repo_url in "${!repositories[@]}"; do
         destination="${repositories[$repo_url]}"
-        git clone --depth=1 "$repo_url" "$destination"
+        git clone --depth=1 "$repo_url" "$destination" &
     done
+
+    wait # Ensure all cloning processes are complete
 }
 
 # Clone repositories in parallel
-clone_repositories &
+clone_repositories
 
 # Install Oh My Zsh if not already installed
 if [ ! -d "$ZSH_CUSTOM" ]; then
@@ -37,9 +40,8 @@ fi
 
 # Install Home Manager if not already installed
 if ! command -v home-manager &> /dev/null; then
-    sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+    sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.11.tar.gz home-manager
     sudo nix-channel --update
-    # export NIX_PATH=$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
     nix-shell '<home-manager>' -A install
 fi
 
@@ -55,6 +57,3 @@ sudo ln -s "$NIXOS_CONFIG_PATH" /etc/nixos
 
 # Rebuild NixOS
 sudo nixos-rebuild switch
-
-# Wait for parallel processes to finish
-wait

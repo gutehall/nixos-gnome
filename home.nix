@@ -62,6 +62,8 @@
     k9s
     helm
     argocd
+    discord
+    discordo
   ];
 
   home.sessionVariables = {

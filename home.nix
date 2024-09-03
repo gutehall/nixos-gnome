@@ -2,8 +2,8 @@
 
 {
   imports = [
-      ./zsh.nix 
-      ./vim.nix
+      # ./zsh.nix 
+      # ./vim.nix
   ];
 
   home.username = "mathias";
@@ -35,7 +35,6 @@
     btop
     tailscale
     docker
-    minecraft
     dropbox
     kubectl
     minikube
@@ -49,6 +48,8 @@
     drive
     tmux
     warp-terminal
+    meslo-lg
+    fira-code
   ];
 
   home.sessionVariables = {

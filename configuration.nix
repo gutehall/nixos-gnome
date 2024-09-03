@@ -48,29 +48,25 @@
   
   environment.systemPackages = with pkgs; [ gnomeExtensions.appindicator ];
 
-  environment.gnome.excludePackages = with pkgs.gnome; [
-    baobab
-    cheese
-    eog
-    epiphany
-    gedit
-    simple-scan
-    totem
-    yelp
-    evince
-    file-roller
-    geary
-    seahorse
-    tali
-    iagno 
-    hitori 
-    atomix
-
-    gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-contacts
-    gnome-font-viewer gnome-logs gnome-maps gnome-music pkgs.gnome-photos gnome-screenshot
-    gnome-system-monitor gnome-weather gnome-disk-utility pkgs.gnome-connections 
-    pkgs.gnome-tour gnome-terminal
-  ];
+#  environment.gnome.excludePackages = with pkgs.gnome; [
+#    baobab
+#    cheese
+#    eog
+#    epiphany
+#    # gedit
+#    simple-scan
+#    totem
+#    yelp
+#    evince
+#    file-roller
+#    geary
+#    seahorse
+#    tali
+#    iagno 
+#    hitori 
+#    atomix
+#    nautilus
+#  ];
 
   services.printing.enable = true;
 
@@ -95,7 +91,7 @@
   };
 
   services.blueman.enable = true;
-  dbus.enable = true;
+  # dbus.enable = true;
 
    users.users.mathias = {
      isNormalUser = true;

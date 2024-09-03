@@ -17,7 +17,7 @@ fi
 clone_repositories() {
     declare -A repositories=(
         ["https://github.com/amix/vimrc.git"]=$VIMRC_PATH
-        ["https://github.com/zsh-users/zsh-autosuggestions"]=$ZSH_CUSTOM_PLUGINS/zsh-autosuggestions
+        ["https://github.com/zsh-users/zsh-autosuggestions"]=$ZSH_CUSTOM_PLUGINS/sh-autosuggestions
         ["https://github.com/zsh-users/zsh-syntax-highlighting.git"]=$ZSH_CUSTOM_PLUGINS/zsh-syntax-highlighting
         ["https://github.com/MohamedElashri/exa-zsh"]=$ZSH_CUSTOM_PLUGINS/exa-zsh
     )

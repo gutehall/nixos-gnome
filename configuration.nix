@@ -96,7 +96,7 @@
    users.users.mathias = {
      isNormalUser = true;
      description = "mathias";
-     extraGroups = [ "networkmanager" "wheel" ];
+     extraGroups = [ "networkmanager" "wheel" "docker" ];
      shell = pkgs.zsh;
      packages = with pkgs; [
      ];
@@ -117,6 +117,7 @@
 
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.guest.enable = true;
+  virtualisation.docker.enable = true;
 
   powerManagement.enable = true; 
 

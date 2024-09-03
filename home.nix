@@ -35,6 +35,7 @@
     btop
     tailscale
     docker
+    # minecraft
     dropbox
     kubectl
     minikube
@@ -50,6 +51,17 @@
     warp-terminal
     meslo-lg
     fira-code
+    docker-compose
+    tree
+    qemu
+    lazydocker
+    azure-cli
+    tfsec
+    infracost
+    transmission
+    k9s
+    helm
+    argocd
   ];
 
   home.sessionVariables = {

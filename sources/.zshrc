@@ -26,6 +26,10 @@ if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nano'
 fi
 
+alias switch="sudo nixos-rebuild switch"
+alias search="nix search nixpkgs"
+alias garbage="nix-collect-garbage --delete-old"
+
 alias ld="eza -lD"
 alias lf="eza -lF --color=always | grep -v /"
 alias lh="eza -dl .* --group-directories-first"

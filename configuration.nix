@@ -91,7 +91,6 @@
   };
 
   services.blueman.enable = true;
-  # dbus.enable = true;
 
    users.users.mathias = {
      isNormalUser = true;

@@ -4,7 +4,6 @@
   imports = [
        ./zsh.nix 
        ./vim.nix
-       ./battery.nix
   ];
 
   home.username = "mathias";
